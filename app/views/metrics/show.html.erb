@@ -1,0 +1,18 @@
+<h1><%= params['name'] %></h1>
+<table width="300px">
+    <% @users_with_metrics.each do |user| %>
+        <% @user_metric_value = user['metric_value'] || 0.0 %>
+        <tr>
+            <td><%= user['first_name'] %></td>
+            <td><%= user['last_name'] %></td>
+            <td style="text-align: right;"><%= @user_metric_value %></td>
+            <% if @user_metric_value == 0.0 %>
+                <td><%= link_to "Create",metrics_create_path(user_id: user['id'], metric_id: params['id'], metric_name: params['name']) %></td>
+            <% else %>
+                <td><%= link_to "Edit",users_edit_path(id: user['id'], metric_value_id: user['metric_value_id'], metric_id: user['metric_id'], metric_name: params['name']) %></td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
+<%= link_to "Back", root_path %>
+<%= params %>

@@ -1,0 +1,7 @@
+<%= form_tag("/users/update", method: "get") do %>
+     <%= text_field_tag('metric_value_data',@metric_value['value']) %><br>
+     <%= hidden_field_tag('metric_id',@metric_id) %>
+     <%= hidden_field_tag('metric_value_id',@metric_value_id) %>
+     <%= hidden_field_tag('metric_name',@metric_name) %>
+     <%= submit_tag %>
+<% end %>

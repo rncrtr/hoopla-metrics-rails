@@ -1,0 +1,7 @@
+<h1>Metrics</h1>
+<div class="metrics">
+  <% @metrics.each do |metric| %>
+    <% @metric_name = metric['name'] %>
+    <div class="metric" style="margin: 10px"><strong><%= link_to @metric_name,{action: 'show', id: metric['id'], name: metric['name']}  %></strong></div>
+  <% end %>
+</div>

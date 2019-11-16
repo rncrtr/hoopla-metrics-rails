@@ -1,0 +1,8 @@
+<h2><%= @user['first_name'] %> <%= @user['last_name'] %></h2>
+<%= form_tag("/metrics/save", method: "get") do %>
+     <%= text_field_tag('metric_value_data',"0.0") %><br>
+     <%= hidden_field_tag('metric_id',@metric_id) %>
+     <%= hidden_field_tag('metric_name',@metric_name) %>
+     <%= hidden_field_tag('user_id',@user_id) %>
+     <%= submit_tag %>
+<% end %>
