@@ -13,3 +13,5 @@
  *= require_tree .
  *= require_self
  */
+body{font-family: sans-serif; font-size: 1.3em;}
+input, input[type="submit"]{font-size: 1.1em;}

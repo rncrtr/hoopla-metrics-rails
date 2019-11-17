@@ -7,12 +7,12 @@
             <td><%= user['last_name'] %></td>
             <td style="text-align: right;"><%= @user_metric_value %></td>
             <% if @user_metric_value == 0.0 %>
-                <td><%= link_to "Create",metrics_create_path(user_id: user['id'], metric_id: params['id'], metric_name: params['name']) %></td>
+                <td style="padding-left: 20px;"><%= link_to "Create",metrics_create_path(user_id: user['id'], metric_id: params['id'], metric_name: params['name']) %></td>
             <% else %>
-                <td><%= link_to "Edit",users_edit_path(id: user['id'], metric_value_id: user['metric_value_id'], metric_id: user['metric_id'], metric_name: params['name']) %></td>
+                <td style="padding-left: 20px;"><%= link_to "Edit",users_edit_path(id: user['id'], metric_value_id: user['metric_value_id'], metric_id: user['metric_id'], metric_name: params['name']) %></td>
             <% end %>
         </tr>
     <% end %>
 </table>
-<%= link_to "Back", root_path %>
-<%= params %>
+<br />
+<%= link_to "Back to Metrics", root_path %>

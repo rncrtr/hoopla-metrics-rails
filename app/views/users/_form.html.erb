@@ -1,3 +1,5 @@
+<h2><%= @user['first_name'] %> <%= @user['last_name'] %></h2>
+<%= @metric_name %>
 <%= form_tag("/users/update", method: "get") do %>
      <%= text_field_tag('metric_value_data',@metric_value['value']) %><br>
      <%= hidden_field_tag('metric_id',@metric_id) %>
